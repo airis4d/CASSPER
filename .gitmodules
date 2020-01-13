@@ -1,0 +1,3 @@
+[submodule "Semantic-Segmentation-Suite"]
+	path = Semantic-Segmentation-Suite
+	url = https://github.com/GeorgeSeif/Semantic-Segmentation-Suite.git
