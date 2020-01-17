@@ -172,11 +172,7 @@ def image_man():
             cv2.drawContours(image,[c],0,(0,0,255),-1)   
 
 
-    if fln.startswith("Falcon"):
-            image[0:4096, 0:126][:]=[255,0,255]
-            image[0:126, 0:4096][:]=[255,0,255]
-            image[0:4096, 3964:4096][:]=[255,0,255]
-            image[3964:4096, 0:4096][:]=[255,0,255]
+    
     img_corrected = cv2.hconcat([ contr_enh,image])
     white=np.zeros((int((image.shape[0])/7),(image.shape[1])*2),np.uint8)
 
@@ -279,6 +275,12 @@ for fln in sorted(os.listdir(input_dir)):
             continue
 
         if k==ord('f'):
+            if fln.startswith("Falcon"):
+                image = np.array(image,np.uint8)
+                image[0:4096, 0:126][:]=[255,0,255]
+                image[0:126, 0:4096][:]=[255,0,255]
+                image[0:4096, 3964:4096][:]=[255,0,255]
+                image[3964:4096, 0:4096][:]=[255,0,255]
             
             name1=fln.replace('.mrc','cont.png')
             name2=fln.replace('.mrc','.png')
