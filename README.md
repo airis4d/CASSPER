@@ -63,4 +63,5 @@ scale_write_img.py
 test2.py  
 train2.py  
 Train8.sh  
-```  
+```
+If prediction without training is to be done, the folder TSaved, containing the saved weights, should be added into the respective protein folder. The saved weights used by CASSPER can be found at https://drive.google.com/drive/folders/1Vi4N8RSObD6Oa_pCRcyZ2MS8WzbDT-7b?usp=sharing  
