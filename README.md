@@ -1,10 +1,10 @@
 # CASSPER: A Semantic Segmentation based Particle Picking Algorithm for Single Particle Cryo-Electron Microscopy
 
 This repository contains the following:
-## Labelling Tool
+## CASSPER Labelling Tool
 The Labelling Tool is used to generate segmented labels for fresh training of CASSPER. The tool, sample mrc files and labels are given in the sub folder. All the labels used for the study is also provided. The instructions and Demo video for operating the labelling tool is also given in the subfolder.
 
-
+## Fresh Training
 
 
 
