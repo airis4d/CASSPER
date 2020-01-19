@@ -1,11 +1,14 @@
 # CASSPER Labelling Tool
  
 
-#### Usage
+### Usage
 
+#### Step 1:
+Copy the mrc files into the folder **mrc_directory**
 
- The mrc files to be labeled are to be put into a single folder.
-* The program can be run as `python label_generator.py -i mrc_directory -o output_directory`
+#### Step 2:
+Enter the following command in the terminal.
+`python label_generator.py -i mrc_directory -o output_directory`
 * `mrc_directory` specifies the location of the folder containing all the mrc files
 * `output_directory` specifies the location to which the labels are to be stored.
 
