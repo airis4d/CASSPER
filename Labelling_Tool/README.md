@@ -12,7 +12,7 @@
 Adjust the `blur_sigma` and `contrast` trackbars untill\ the protein and ice particles are clearly visible. 
 Now adjust the `threshold` and `contour_area` trackbars to get the labels of the desired protien particles only.
 
-A demo video showing the labeling tool functioning can be found here: https://youtube/h5dpQzWUEvE 
+A demo video showing the labeling tool functioning can be found here: https://youtu.be/h5dpQzWUEvE
 
 
 
