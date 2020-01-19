@@ -1,6 +1,7 @@
 # CASSPER Labelling Tool
- 
+![label generator](images/image.png).  
 
+A demo video showing the labeling tool functioning can be found here: https://youtu.be/h5dpQzWUEvE .  
 ### Usage
 
 #### Step 1:
@@ -14,20 +15,7 @@ Enter the following command in the terminal.
 
 #### Step 3
 Adjust the `blur_sigma` and `contrast` trackbars until the protein and ice particles are clearly visible. 
-Now adjust the `threshold` and `contour_area` trackbars to get the labels of the desired protien particles only.
-
-#### Step 4: 
-Annotate the ice and carbon contaminations
-
-A demo video showing the labeling tool functioning can be found here: https://youtu.be/h5dpQzWUEvE
-
-
-
-
-![label generator](images/image.png)
-
-### Instruction manual
-
+Now adjust the `threshold` and `contour_area` trackbars to label only the desired particles.
 #### Mouse control
 
 Button | Description | 
@@ -47,7 +35,10 @@ Shortcut | Description |
 <kbd>Space</kbd> | save the current ice patch while labeling ice |
 <kbd>ESC</kbd> | Finish labeling ice patches |
 <kbd>ESC</kbd> | Finish labeling while carbon contamination annotation |
-----
-![color ice](images/ice.png)
+
+
+#### Step 4: 
+Annotate the ice and carbon contaminations
+
 
 
