@@ -39,6 +39,7 @@ Shortcut | Description |
 
 #### Step 4: 
 Annotate the ice and carbon contaminations
+![color ice](images/ice.png)
 
 
 
