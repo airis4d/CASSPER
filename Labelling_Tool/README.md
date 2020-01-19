@@ -1,7 +1,7 @@
 # CASSPER Labelling Tool
 ![label generator](images/image.png).  
 
-A demo video showing the labeling tool functioning can be found here: https://youtu.be/h5dpQzWUEvE .  
+A demo video showing the labeling tool functioning can be found here: https://youtu.be/xSvF5tV70lc .  
 ### Usage
 
 #### Step 1:
