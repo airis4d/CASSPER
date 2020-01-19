@@ -12,8 +12,12 @@ Enter the following command in the terminal.
 * `mrc_directory` specifies the location of the folder containing all the mrc files
 * `output_directory` specifies the location to which the labels are to be stored.
 
+#### Step 3
 Adjust the `blur_sigma` and `contrast` trackbars untill\ the protein and ice particles are clearly visible. 
 Now adjust the `threshold` and `contour_area` trackbars to get the labels of the desired protien particles only.
+
+#### Step 4: 
+Annotate the ice and carbon contaminations
 
 A demo video showing the labeling tool functioning can be found here: https://youtu.be/h5dpQzWUEvE
 
