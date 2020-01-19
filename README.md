@@ -1,4 +1,5 @@
-# CASSPER: A Semantic Segmentation based Particle Picking Algorithm for Single Particle Cryo-Electron Microscopy
+# CASSPER
+## A Semantic Segmentation based Particle Picking Algorithm for Single Particle Cryo-Electron Microscopy
 
 This repository contains the following:
 ## 1. CASSPER Labelling Tool
@@ -10,4 +11,4 @@ The mrc files and segmented labels are needed for fresh training. The detailed d
 ## 3. Prediction using trained model
 If prediction without training is to be done, the folder TSaved, containing the saved weights, should be added into the respective protein folder in **Train_and_Predict** folder.
 
-The saved weights used by CASSPER can be found at https://drive.google.com/drive/folders/1Vi4N8RSObD6Oa_pCRcyZ2MS8WzbDT-7b?usp=sharing  
+The saved weights used by CASSPER can be found [here](https://drive.google.com/drive/folders/1Vi4N8RSObD6Oa_pCRcyZ2MS8WzbDT-7b?usp=sharing "Google Drive").
