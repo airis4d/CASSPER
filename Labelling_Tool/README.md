@@ -40,31 +40,3 @@ Shortcut | Description |
 ![color ice](images/ice.png)
 
 
-
-## Folder and file Structure
-```
-sample_mrc_files/ 
-utils/
-protein_1/  
-    ──labels/  
-    └───Pfiles.txt  
-    └───Trfiles.txt  
-    └───class_dict.csv  
-protein_2/  
-    └───labels/  
-    └───Pfiles.txt  
-    └───Trfiles.txt  
-    └───class_dict.csv  
-
-predict2.py  
-ProtiPr.py  
-ProtiSem.cpython-36m-x86_64-linux-gnu.so  
-PSPred.py  
-PSTest.py  
-PSTrain.py  
-scale_write_img.py  
-test2.py  
-train2.py  
-Train8.sh  
-```
-If prediction without training is to be done, the folder TSaved, containing the saved weights, should be added into the respective protein folder. The saved weights used by CASSPER can be found at https://drive.google.com/drive/folders/1Vi4N8RSObD6Oa_pCRcyZ2MS8WzbDT-7b?usp=sharing  
