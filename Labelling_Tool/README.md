@@ -4,16 +4,16 @@
 A demo video showing the labeling tool functioning can be found here: https://youtu.be/xSvF5tV70lc .  
 ### Usage
 
-#### Step 1:
+### Step 1:
 Copy the mrc files into the folder **mrc_directory**
 
-#### Step 2:
+### Step 2:
 Enter the following command in the terminal.
 `python label_generator.py -i mrc_directory -o output_directory`
 * `mrc_directory` specifies the location of the folder containing all the mrc files
 * `output_directory` specifies the location to which the labels are to be stored.
 
-#### Step 3
+### Step 3
 Adjust the `blur_sigma` and `contrast` trackbars until the protein and ice particles are clearly visible. 
 Now adjust the `threshold` and `contour_area` trackbars to label only the desired particles.
 
@@ -30,7 +30,7 @@ Shortcut | Description |
 <kbd>ESC</kbd> | Finish labeling while carbon contamination annotation |
 
 
-#### Step 4: 
+### Step 4: 
 Annotate the ice and carbon contaminations.
 #### Mouse control
 
