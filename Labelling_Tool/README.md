@@ -16,13 +16,6 @@ Enter the following command in the terminal.
 #### Step 3
 Adjust the `blur_sigma` and `contrast` trackbars until the protein and ice particles are clearly visible. 
 Now adjust the `threshold` and `contour_area` trackbars to label only the desired particles.
-#### Mouse control
-
-Button | Description | 
---- | --- |
-Left | Draw box while labeling ice
-Left | To click on the four corners of the carbon contamination
-
 
 #### Keyboard Shortcuts
 
@@ -38,7 +31,14 @@ Shortcut | Description |
 
 
 #### Step 4: 
-Annotate the ice and carbon contaminations
+Annotate the ice and carbon contaminations.
+#### Mouse control
+
+Button | Description | 
+--- | --- |
+Left | Draw box while labeling ice
+Left | To click on the four corners of the carbon contamination
+
 ![color ice](images/ice.png)
 
 
