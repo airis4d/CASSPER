@@ -11,6 +11,6 @@ To predict the segmented labels using the trained model, enter the command **`./
 To get the centre of the particles in star format, run the code `python star_from_labels,py -i Protein1/Predict_labels -o Protein1/star_coordinates`.The star files will be saved in folder `Protein1/star_coordinates`.
 
 ## Prediction using cross model or pretrained model
-The trained model will be saved in the folder -`Protein1/TSaved`. If we want cross model or a  pretrained model, just replace the TSaved folder. Pretrained models correspoding to different proteins mentioned in the paper  and the **cross model** trained with 15 proteins can be downloaded from the link:
+The trained model will be saved in the folder -`Protein1/TSaved`. If we want cross model or a  pretrained model, just replace the TSaved folder. Pretrained models correspoding to different proteins mentioned in the paper  and the **cross model** trained with 15 proteins can be downloaded from the link:[here](https://drive.google.com/drive/folders/1Vi4N8RSObD6Oa_pCRcyZ2MS8WzbDT-7b?usp=sharing "Google Drive").
 
 After prediction, run the code `python star_from_labels,py -i Protein1/Predict_labels -o Protein1/star_coordinates`to get the centre of the particles in star format. The star files will be saved in folder `Protein1/star_coordinates`.
