@@ -1,3 +1,32 @@
+## Folder and file Structure
+```
+builders/  
+frontends/  
+models/  
+mrc_files/ 
+utils/
+Protein1/  
+    └───labels/  
+    └───Pfiles.txt  
+    └───Trfiles.txt  
+    └───class_dict.csv  
+Protein2/  
+    └───labels/  
+    └───Pfiles.txt  
+    └───Trfiles.txt  
+    └───class_dict.csv  
+predict2.py  
+ProtiPr.py  
+ProtiSem.cpython-36m-x86_64-linux-gnu.so  
+PSPred.py  
+PSTest.py  
+PSTrain.py  
+scale_write_img.py  
+test2.py  
+train2.py  
+Train8.sh  
+```  
+
 ## Fresh Training
 ### 1: Prepration of supplimentary files for Training
 Put the mrc files for training in the `Protein1/mrc_files/` folder and labels in the folder- `Protein1/labels/`. Note that mrc files and labels should have the same root name. 
