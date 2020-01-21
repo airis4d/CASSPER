@@ -18,6 +18,53 @@ If prediction without training is to be done, the folder **TSaved**, containing 
 
 **Please remember to run the commands from the respective sub directories itself.** 
 
-## Installation
-A python3 virtual environment with libraries mentioned in `requirements.txt` is to be set up. 
-The code `cassper.sh` will create a pthon3 virtual environment and install required libraries. 
+
+### Setting up CASSPER
+CASSPER runs on Python 2.7 or 3.6+. We recommend running it from within
+a virtual environment.
+
+#### Creating a virtual environment for CASSPER
+
+##### Set up a virtual environment using pip and Virtualenv
+
+If you are familiar with `virtualenv`, you can use it to create 
+a virtual environment.
+
+For Python 3.6, create a new environment
+with your preferred virtualenv wrapper, for example:
+
+* [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) (Bourne-shells)
+* [virtualfish](https://virtualfish.readthedocs.io/en/latest/) (fish-shell)
+
+
+Either follow instructions [here](https://virtualenv.pypa.io/en/stable/installation/) or install via
+`pip`.
+```bash
+$ pip install virtualenv
+```
+
+Then, create a `virtualenv` environment by creating a new directory for a Python 3.6 virtualenv environment
+```bash
+$ mkdir -p cassper
+$ virtualenv --python=python3.6 cassper
+```
+where `python3.6` is a valid reference to a Python 3.6 executable.
+
+Activate the environment
+```bash
+$ source cassper/bin/activate
+```
+
+#### Install the required python packages
+
+*Note: make sure that the environment is activated throughout the installation process.
+When you are done, deactivate it using* 
+`conda deactivate`, `source deactivate`, *or* `deactivate` 
+*depending on your version*.
+
+In the project root directory, run the following to install the required packages.
+Note that this commands installs the packages within the activated virtual environment.
+
+```bash
+$ pip install -r requirements.txt
+```
