@@ -16,11 +16,10 @@ The mrc files and segmented labels are needed for fresh training. The detailed d
 The **TSaved** folder containing the trained weights for different proteins obtained from CASSPER can be found [here](https://drive.google.com/drive/folders/1Vi4N8RSObD6Oa_pCRcyZ2MS8WzbDT-7b?usp=sharing "Google Drive").   
 If prediction without training is to be done, the folder **TSaved**, containing the saved weights, should be added into the respective protein folder in **Train_and_Predict** folder.
 
-**Please remember to run the commands from the respective sub directories itself.** 
 
 
 ### Setting up CASSPER
-CASSPER runs on Python 2.7 or 3.6+. We recommend running it from within
+CASSPER runs on Python 3.6+. We recommend running it from within
 a virtual environment.
 
 #### Creating a virtual environment for CASSPER
@@ -59,7 +58,7 @@ $ source cassper/bin/activate
 
 *Note: make sure that the environment is activated throughout the installation process.
 When you are done, deactivate it using* 
-`conda deactivate`, `source deactivate`, *or* `deactivate` 
+`source deactivate`, *or* `deactivate` 
 *depending on your version*.
 
 In the project root directory, run the following to install the required packages.
@@ -68,3 +67,4 @@ Note that this commands installs the packages within the activated virtual envir
 ```bash
 $ pip install -r requirements.txt
 ```
+**Please remember to activate this virtual environment you run  the codes and run the codes from respective sub directories itself.** 
