@@ -37,7 +37,7 @@ Run the command `./cassper_train.sh Protein1`. The .sh is followed by the folder
 #### Step1
 To predict the segmented labels using the trained model, enter the command **`./cassper_predict.sh Protein1`** in the terminal. The predicted images will be saved in the folder- `Protein1/Predict_labels`. 
 #### Step 2
-To get the centre of the particles in `.star` format, run the code `python star_from_labels.py -i Protein1/Predict_labels -o Protein1/star_coordinates`.The star files will be saved in folder `Protein1/star_coordinates`.  
+To get the centre of the particles in `.star` format, run the code `python star_from_labels.py -i Protein1/Predict_labels -o Protein1/star_coordinates`. `Protein1/star_coordinates` is the location of the folder to which the coordinates are to be saved.  The coorderdinates will be saved in this folder in *.star* format
 A demo video showing the working of the code can be seen [here](https://youtu.be/wxdpRDVdJZY) .
 
 ## Prediction using cross model or pretrained model
