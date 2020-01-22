@@ -86,7 +86,7 @@ six==1.11.0
 sklearn==0.0
 stevedore==1.30.1
 tensorboard==1.11.0
-tensorflow-gpu==1.4.0
+tensorflow-gpu==1.15.0
 tensorflow-tensorboard==0.4.0
 termcolor==1.1.0
 terminado==0.8.1
