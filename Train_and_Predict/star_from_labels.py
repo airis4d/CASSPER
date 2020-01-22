@@ -219,7 +219,7 @@ for fln in (os.listdir(input_dir)):
         for line in final_list:
             boxwriter.writerow(['{0:.6f}'.format(line[0]),'{0:.6f}'.format(line[1]), -999, '{0:.6f}'.format(-999), '{0:.6f}'.format(-999)])
             cv2.circle(frame, line, radius, (0, 255, 0), 3)
-    cv2.imwrite(os.path.join(out_dir,fln),frame)
+    
     print(fln,bef_len,len(out_list),len(final_list),'completed')
 sp=time.time()
 print((sp-st)/60,'minutes')
