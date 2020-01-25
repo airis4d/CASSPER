@@ -47,7 +47,6 @@ mrcfile==1.1.2
 nbconvert==5.4.0
 nbformat==4.4.0
 networkx==2.3
-notebook==5.7.0
 numpy==1.15.3
 opencv-python==4.1.1.26
 packaging==19.1
@@ -70,7 +69,6 @@ pytest==5.1.2
 python-dateutil==2.7.3
 pytz==2018.5
 PyWavelets==1.0.3
-PyYAML==3.13
 pyzmq==17.1.2
 qtconsole==4.4.2
 ray==0.7.4
@@ -92,7 +90,6 @@ terminado==0.8.1
 testpath==0.4.2
 tornado==5.1.1
 traitlets==4.3.2
-urllib3==1.24.1
 virtualenv==16.4.3
 virtualenv-clone==0.5.1
 virtualenvwrapper==4.8.4
