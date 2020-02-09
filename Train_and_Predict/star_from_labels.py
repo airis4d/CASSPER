@@ -69,7 +69,7 @@ def primary_sorting(i):
     inn_positions=np.nonzero(result)
     out_positions=np.nonzero(result2)
     
-    _,contours, hierarchy = cv2.findContours(result,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(result,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
     l=len(contours)
     a,b= (inn_positions[0].max()-inn_positions[0].min()),(inn_positions[1].max()-inn_positions[1].min())
     c,d= (out_positions[0].max()-out_positions[0].min()),(out_positions[1].max()-out_positions[1].min())
@@ -168,7 +168,7 @@ for fln in (os.listdir(input_dir)):
     ret,thresh1 = cv2.threshold(gray_frame,0,255,cv2.THRESH_BINARY)
     
     if j==0:
-        _,contours, hierarchy = cv2.findContours(thresh1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+        contours, hierarchy = cv2.findContours(thresh1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
         cont_array=np.array([c for c in contours])
         c_ = np.array([cv2.contourArea(contour) for contour in contours])
         c_full_list=cont_array[(c_>200) & (c_<50000)]
@@ -187,7 +187,7 @@ for fln in (os.listdir(input_dir)):
     thresh1[0:y,0:radius+2][:]=[0]
     thresh1[(y-radius+2):y,0:x][:]=[0]
     thresh1[0:y,(x-radius+2):x][:]=[0]
-    _,contours, hierarchy = cv2.findContours(thresh1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(thresh1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
     cont_array=np.array([c for c in contours])
     c_ = np.array([cv2.contourArea(contour) for contour in contours])
     c_full_list=cont_array[(c_>(radius**1.4)) & (c_<50000)]
