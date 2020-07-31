@@ -120,7 +120,7 @@ def contr_enhance(im,ctr):
 
 def callback_1(val):
     global s_min
-    s_min=val
+    s_min=val+1
     image_man()
 
 def callback_2(val):
