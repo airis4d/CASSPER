@@ -44,7 +44,6 @@ $ pip install virtualenv
 
 Then, create a `virtualenv` environment by creating a new directory for a Python 3.6 virtualenv environment
 ```bash
-$ mkdir -p cassper
 $ virtualenv --python=python3.6 cassper
 ```
 where `python3.6` is a valid reference to a Python 3.6 executable.
