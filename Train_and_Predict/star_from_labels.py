@@ -170,7 +170,7 @@ for fln in (os.listdir(input_dir)):
     if j==0:
         contours, hierarchy = cv2.findContours(thresh1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
         cont_array=np.array([c for c in contours])
-        c_ = np.array([cv2.contourArea(contour) for contour in contours])
+        c_ = np.array([cv2.contourArea(contour) for contour in contours],dtype='object')
         c_full_list=cont_array[(c_>200) & (c_<50000)]
      
         c_list=list(map(lambda x: min_circle(x),c_full_list))
@@ -189,7 +189,7 @@ for fln in (os.listdir(input_dir)):
     thresh1[0:y,(x-radius+2):x][:]=[0]
     contours, hierarchy = cv2.findContours(thresh1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
     cont_array=np.array([c for c in contours])
-    c_ = np.array([cv2.contourArea(contour) for contour in contours])
+    c_ = np.array([cv2.contourArea(contour) for contour in contours],dtype='object')
     c_full_list=cont_array[(c_>(radius**1.4)) & (c_<50000)]
     
     c_list=(list(map(lambda x: min_rect_circle(x),c_full_list)))
@@ -203,21 +203,21 @@ for fln in (os.listdir(input_dir)):
     out_list=eliminate_near(final_list)
     for ele in sorted(out_list, reverse = True):  
         del final_list[ele] 
-    with open(os.path.join(out_dir,fln.replace('.png','.star')), "w") as boxfile:
-        boxwriter = csv.writer(
-        boxfile, delimiter="\t", quotechar="|", quoting=csv.QUOTE_NONE
+    with open(os.path.join(out_dir,fln.replace('.png','.star')), "w") as starfile:
+        starwriter = csv.writer(
+        starfile, delimiter="\t", quotechar="|", quoting=csv.QUOTE_NONE
         )
-        boxwriter.writerow([])
-        boxwriter.writerow(["data_"])
-        boxwriter.writerow([])
-        boxwriter.writerow(["loop_"])
-        boxwriter.writerow(["_rlnCoordinateX #1 "])
-        boxwriter.writerow(["_rlnCoordinateY #2"])
-        boxwriter.writerow(["_rlnClassNumber #3"])
-        boxwriter.writerow(["_rlnAnglePsi #4"])
-        boxwriter.writerow(["_rlnAutopickFigureOfMerit  #5"])
+        starwriter.writerow([])
+        starwriter.writerow(["data_"])
+        starwriter.writerow([])
+        starwriter.writerow(["loop_"])
+        starwriter.writerow(["_rlnCoordinateX #1 "])
+        starwriter.writerow(["_rlnCoordinateY #2"])
+        starwriter.writerow(["_rlnClassNumber #3"])
+        starwriter.writerow(["_rlnAnglePsi #4"])
+        starwriter.writerow(["_rlnAutopickFigureOfMerit  #5"])
         for line in final_list:
-            boxwriter.writerow(['{0:.6f}'.format(line[0]),'{0:.6f}'.format(line[1]), -999, '{0:.6f}'.format(-999), '{0:.6f}'.format(-999)])
+            starwriter.writerow(['{0:.6f}'.format(line[0]),'{0:.6f}'.format(line[1]), -999, '{0:.6f}'.format(-999), '{0:.6f}'.format(-999)])
             cv2.circle(frame, line, radius, (0, 255, 0), 3)
     
     print(fln,bef_len,len(out_list),len(final_list),'completed')
