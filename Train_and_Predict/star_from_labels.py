@@ -169,7 +169,7 @@ for fln in (os.listdir(input_dir)):
     
     if j==0:
         contours, hierarchy = cv2.findContours(thresh1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
-        cont_array=np.array([c for c in contours])
+        cont_array=np.array([c for c in contours],dtype = 'object')
         c_ = np.array([cv2.contourArea(contour) for contour in contours],dtype='object')
         c_full_list=cont_array[(c_>200) & (c_<50000)]
      
@@ -189,7 +189,7 @@ for fln in (os.listdir(input_dir)):
     thresh1[0:y,(x-radius+2):x][:]=[0]
     contours, hierarchy = cv2.findContours(thresh1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
     cont_array=np.array([c for c in contours])
-    c_ = np.array([cv2.contourArea(contour) for contour in contours],dtype='object')
+    c_ = np.array([cv2.contourArea(contour) for contour in contours], dtype='object')
     c_full_list=cont_array[(c_>(radius**1.4)) & (c_<50000)]
     
     c_list=(list(map(lambda x: min_rect_circle(x),c_full_list)))
