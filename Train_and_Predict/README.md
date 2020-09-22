@@ -7,13 +7,9 @@ mrc_files/
 utils/
 Protein1/  
     └───labels/  
-    └───Pfiles.txt  
-    └───Trfiles.txt  
     └───class_dict.csv  
 Protein2/  
     └───labels/  
-    └───Pfiles.txt  
-    └───Trfiles.txt  
     └───class_dict.csv  
 predict2.py  
 ProtiPr.py  
