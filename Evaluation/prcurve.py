@@ -6,51 +6,32 @@ from scipy import ndimage
 from functools import partial
 import itertools
 import pandas as pd
-import multiprocessing
-pool = multiprocessing.Pool()
-from matplotlib import pyplot 
-
-st=time.time()
-
-# Codes for star from labels and pr_curve
-
-from PIL import Image,ImageEnhance
-import numpy as np,csv
-import cv2,os,argparse
-import mrcfile,time
-from scipy import ndimage
-from functools import partial
-import itertools
-import pandas as pd
-import multiprocessing
-pool = multiprocessing.Pool()
 from matplotlib import pyplot 
 
 
 
+#to get a bounding box from a single point
+def getbox_from_point(pt):
+    return(pt[0]-w/2,pt[1]-w/2,pt[0]+w/2,pt[1]+w/2)
 
-def bbox_from_point(point):
-    return(point[0]-w/2,point[1]-w/2,point[0]+w/2,point[1]+w/2)
-def bb_intersection_over_union(boxA, boxB):
+# compute the area of intersection between two boxes
+def bbox_iou(boxx, boxy):
     # determine the (x, y)-coordinates of the intersection rectangle
-    xA = max(boxA[0], boxB[0])
-    yA = max(boxA[1], boxB[1])
-    xB = min(boxA[2], boxB[2])
-    yB = min(boxA[3], boxB[3])
+    xA = max(boxx[0], boxy[0])
+    yA = max(boxx[1], boxy[1])
+    xB = min(boxx[2], boxy[2])
+    yB = min(boxx[3], boxy[3])
 
-    # compute the area of intersection rectangle
     interArea = abs(max((xB - xA, 0)) * max((yB - yA), 0))
     if interArea == 0:
         return 0
-    # compute the area of both the prediction and ground-truth
-    # rectangles
-    boxAArea = abs((boxA[2] - boxA[0]) * (boxA[3] - boxA[1]))
-    boxBArea = abs((boxB[2] - boxB[0]) * (boxB[3] - boxB[1]))
+    boxxArea = abs((boxx[2] - boxx[0]) * (boxx[3] - boxx[1]))
+    boxyArea = abs((boxy[2] - boxy[0]) * (boxy[3] - boxy[1]))
 
     # compute the intersection over union by taking the intersection
     # area and dividing it by the sum of prediction + ground-truth
     # areas - the interesection area
-    iou = interArea / float(boxAArea + boxBArea - interArea)
+    iou = interArea / float(boxxArea + boxyArea - interArea)
 
     # return the intersection over union value
     return iou
@@ -311,7 +292,7 @@ for cont_thresh in cont_range:
     recall_sum =0
     mean_iou_sum =0
     total_grond=0
-    images_with_particles=0
+    images_count=0
     for fln in (os.listdir(input_dir)):
     
         frame=cv2.imread(os.path.join(input_dir,fln))
@@ -354,11 +335,11 @@ for cont_thresh in cont_range:
         len_cry_tuples=0
         len_pred_tuples=0
         MEAN_IOU=0
-        TP=0
+        TruePos=0
     
     
-        cass_bbox = list(map(bbox_from_point, cass_tuples))
-        cry_bbox = list(map(bbox_from_point, gt_tuples))
+        cass_bbox = list(map(getbox_from_point, cass_tuples))
+        cry_bbox = list(map(getbox_from_point, gt_tuples))
         
         len_cry_tuples=len_cry_tuples+len(gt_cord)
         len_pred_tuples=len_pred_tuples+len(cass_bbox)
@@ -378,24 +359,24 @@ for cont_thresh in cont_range:
                 
                 del cass_bbox[np.argmax(iou)]
                 del cass_tuples[np.argmax(iou)]
-                TP=TP+1
+                TruePos=TruePos+1
                 MEAN_IOU += max_iou
                 total_grond=total_grond+1
                 pred_list.append(1)
             else:
                 pred_list.append(0)
         if len(gt_tuples) > 0:
-                FN = len_cry_tuples - len(pred_found_index)
+                FalseNeg = len_cry_tuples - len(pred_found_index)
                 #print(FN,len_cry_tuples,len(pred_found_index))
-                FP = len_pred_tuples - len(ground_matching_index)
+                FalsePos = len_pred_tuples - len(ground_matching_index)
 
 
-                if (TP + FP) == 0:
+                if (TruePos + FalsePos) == 0:
                     precision = 0
                 else:
-                    precision = 1.0 * TP / (TP + FP)
+                    precision = 1.0 * TruePos / (TruePos + FalsePos)
 
-                recall = 1.0 * TP / (TP + FN)
+                recall = 1.0 * TruePos / (TruePos + FalseNeg)
                 if (precision + recall) == 0:
                     F1 = 0
                     F2 = 0
@@ -406,11 +387,11 @@ for cont_thresh in cont_range:
                 f2_sum += F2
                 precision_sum += precision
                 recall_sum += recall
-                mean_iou_sum += MEAN_IOU / (TP + 0.001)
-                images_with_particles = images_with_particles + 1
-                TP_sum += TP
-                FP_sum += FP
-                FN_sum += FN
+                mean_iou_sum += MEAN_IOU / (TruePos + 0.001)
+                images_count = images_count + 1
+                TP_sum += TruePos
+                FP_sum += FalsePos
+                FN_sum += FalseNeg
         list_2 = [i for n, i in enumerate(gt_tuples) if n not in ground_matching_index]
         list_3 = [i for n, i in enumerate(cass_all) if n not in cass_tuples]
         thresh1=cv2.cvtColor(thresh1,cv2.COLOR_GRAY2BGR)
@@ -426,9 +407,9 @@ for cont_thresh in cont_range:
 
     f1_avg = f1_sum / images_with_particles
     f2_avg = f2_sum / images_with_particles
-    precision_avg = precision_sum / images_with_particles
-    recall_avg = recall_sum / images_with_particles
-    mean_iou_sum = mean_iou_sum / images_with_particles 
+    precision_avg = precision_sum / images_count
+    recall_avg = recall_sum / images_count
+    mean_iou_sum = mean_iou_sum / images_count 
 
 
     total_precision=1.0 * TP_sum / (TP_sum + FP_sum)   
