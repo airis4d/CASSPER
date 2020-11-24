@@ -3,6 +3,7 @@
 
 ###### *A Semantic Segmentation based Particle Picking Algorithm for Single Particle Cryo-Electron Microscopy*
 
+https://zenodo.org/badge/231048773.svg
 
 This repository contains the following:
 ## 1. CASSPER Labelling Tool
