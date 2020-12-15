@@ -20,6 +20,9 @@ If prediction without training is to be done, the folder **TSaved**, containing 
 
 
 ### Setting up CASSPER
+
+In Linux, just run setup.sh to set up the virtual environment for CASSPER. In that case, you may skip the following procedure.
+
 CASSPER runs on Python 3.6+. We recommend running it from within
 a virtual environment.
 
