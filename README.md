@@ -6,9 +6,7 @@ Assuming you have Python 3.6 and TF2 with the other required packages, simply do
 > ipython
 
 Python 3.6.8 |Anaconda custom (64-bit)| (default, Dec 30 2018, 01:22:34) 
-
 Type 'copyright', 'credits' or 'license' for more information
-
 IPython 6.4.0 -- An enhanced Interactive Python. Type '?' for help.
 
 In [1]: import CASSPER
@@ -17,7 +15,7 @@ In [2]: CASSPER.PredictMRC()
 
 Depending on your Internet connection speed the program may take a few minutes to set up the required files to run the Croos Molecule model on the mrc files in the folder mrc/ The downloaded files will be kept in the folder to save running time in subsequent rounds.
 
-The labeled probable proties for all the mrc files will be available in the folder ./png/Predict_labels/ 
+The labeled probable proteins for all the mrc files will be available in the folder ./png/Predict_labels/ 
 
 The module also allows you to train on new mrc files with labelled png files. (More on this later)
 
