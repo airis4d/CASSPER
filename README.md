@@ -1,3 +1,27 @@
+# CASSPER2 : An easy interface to run CASSPER
+Assuming you have Python 3.6 and TF2 with the other required packages, simply download the file CASSPER.cpython-36m-x86_64-linux-gnu.so to your LINUX_LIB_PATH or working directory that has the mrc files in the folder 'mrc'. Start ipython3.6
+
+nsp@PorteusATMA-114:/mnt/sdb1/Cassper-py/Work$ ipython
+
+Python 3.6.8 |Anaconda custom (64-bit)| (default, Dec 30 2018, 01:22:34) 
+
+Type 'copyright', 'credits' or 'license' for more information
+
+IPython 6.4.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import CASSPER
+
+In [2]: CASSPER.PredictMRC()
+
+Depending on your Internet connection speed the program may take a few minutes to set up the required files to run the Croos Molecule model on the mrc files in the folder mrc/ The downloaded files will be kept in the folder to save running time in subsequent rounds.
+
+The labeled probable proties for all the mrc files will be available in the folder ./png/Predict_labels/ 
+
+The module also allows you to train on new mrc files with labelled png files. (More on this later)
+
+
+
+
 # CASSPER 
 **C**ryo-EM **A**utomatic **S**emantic **S**egmentation based **P**article pick**ER**
 
