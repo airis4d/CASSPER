@@ -1,7 +1,7 @@
 # CASSPER2 : An easy interface to run CASSPER
 Assuming you have Python 3.6 and TF2 with the other required packages, simply download the file CASSPER.cpython-36m-x86_64-linux-gnu.so to your LINUX_LIB_PATH or working directory that has the mrc files in the folder 'mrc'. Start ipython3.6
 
-nsp@PorteusATMA-114:/mnt/sdb1/Cassper-py/Work$ ipython
+> ipython
 
 Python 3.6.8 |Anaconda custom (64-bit)| (default, Dec 30 2018, 01:22:34) 
 
