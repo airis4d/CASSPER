@@ -35,7 +35,7 @@ Run the command `./cassper_train.sh Protein1`. The .sh is followed by the folder
 #### Step 1
 Run `./get_radius.sh` and adjust the track bars to get the radius and erode iteration value. Erode is done to diconnect the particles which are stacked together, if any. 
 #### Step 2
-Run `python predict_coordinates.py -i mrc_files -r radius -e erode_val` and the coordinates are saved as `.star` files in `Protein1/Star` and `.box` coordinates are saved in `Protein1/Box`
+Run `python predict_coordinates.py --mrc mrc_files --rads radius --erode erode_val` and the coordinates are saved as `.star` files in `Protein1/Star` and `.box` coordinates are saved in `Protein1/Box`
 
 ## Prediction using cross model or pretrained model
 The trained model will get saved in the folder -`Protein1/TSaved`. If we want cross model or a  pretrained model, just replace the TSaved folder. Pretrained models correspoding to different proteins mentioned in the paper  and the **cross model** trained with 15 proteins can be downloaded from the link:[Pretrained_and_cross_cassper_models](https://drive.google.com/drive/folders/1Vi4N8RSObD6Oa_pCRcyZ2MS8WzbDT-7b?usp=sharing "Google Drive").
