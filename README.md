@@ -1,5 +1,5 @@
 
-
+PLEASE FIND AN UPDATED RELEASE AT https://github.com/airis4d/CASSPER/releases/tag/v2.0
 
 
 # CASSPER 
