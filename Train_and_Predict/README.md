@@ -33,7 +33,7 @@ Run the command `./cassper_train.sh Protein1`. The .sh is followed by the folder
 
 ### Extraction of coordinates directly.
 #### Step 1
-Run `./get_radius.sh folder/` and adjust the track bars to get the radius and erode iteration value. Erode is done to diconnect the particles which are stacked together, if any. One or two predicted labels has to be placed in a directory named 'first labels' in the Folder and the folder name is given in command 
+Run `./get_radius.sh folder/` and adjust the track bars to get the radius and erode iteration value. Erode is done to diconnect the particles which are stacked together, if any. The key 'q' has to be pressed after each image and the radius and erode values will be displayed in the terminal after two images 
 #### Step 2
 Run `python predict_coordinates.py --mrc mrc_files --rads radius --erode erode_val` and the coordinates are saved as `.star` files in `Protein1/Star` and `.box` coordinates are saved in `Protein1/Box`
 
