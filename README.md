@@ -77,4 +77,4 @@ $ pip install -r requirements.txt
 **Please remember to activate this virtual environment each time you run the codes and run the codes from respective sub-directories itself.** 
 
 ## **Publication**
-This folder contains Particle stacks ( in **.star** format) obtained using crYOLO, CASSPER and Gautomatch for four proteins discussed in the paper https://www.biorxiv.org/content/10.1101/2020.01.20.912139v1. The 2D images used for 3D reconstruction is also marked and shown for all cases in the folder **Publication/2D_images** 
+This folder contains Particle stacks ( in **.star** format) obtained using crYOLO, CASSPER and Gautomatch for four proteins discussed in the paper https://www.nature.com/articles/s42003-021-01721-1. The 2D images used for 3D reconstruction is also marked and shown for all cases in the folder **Publication/2D_images** 
