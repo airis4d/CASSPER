@@ -20,7 +20,7 @@ The mrc files and segmented labels are needed for fresh training. The detailed d
 The **TSaved** folder containing the trained weights for different proteins obtained from CASSPER can be found [here](https://drive.google.com/drive/folders/1Vi4N8RSObD6Oa_pCRcyZ2MS8WzbDT-7b?usp=sharing "Google Drive").   
 If prediction without training is to be done, the folder **TSaved**, containing the saved weights, should be added into the respective protein folder in **Train_and_Predict** folder.
 
-### Instructions about using CASSPE
+### Instructions on using CASSPER
 The detailed instructions about labelling, training and prediction are mentioned in the README files of the respective subfolders.
 Instructions about labelling tool: https://github.com/airis4d/CASSPER/tree/master/Labelling_Tool and Training and prediction:https://github.com/airis4d/CASSPER/tree/master/Train_and_Predict
 
